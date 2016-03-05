@@ -11,9 +11,12 @@
 
 ########Output
 #root:        The root that the method terminated at.
-#valid:       The method converged. (Needs to be implemented)
 #ea:          The approximate relative error at the end of the run.
 #iter:        The iteration that the algorithm terminated at.
+
+####Needs to be implemented
+#valid:       The method converged. (Needs to be implemented)
+
 
 function [root, ea, iter] = newton_raphson(x, f, delta, es, iter_c, verbose = false)
   #initialize
