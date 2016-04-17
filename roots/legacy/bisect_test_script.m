@@ -1,0 +1,1 @@
+[xr, valid, ea, iter] = bisect(12, 16, @bisect_test, eps, 100);
