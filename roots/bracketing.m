@@ -4,22 +4,20 @@
 % The American University in Cairo
 % For License, please see LICENSE 
 %
-
 %
 % File: bracketing.m
 % Author: Islam Faisal
 % The Bracketing methods: Bisection and false position
 %
-
 %This mini-tool implements the bisection method for finding roots of non-linear equations.
 %The bisection method is a bracketing method that given an estimate interval that contain a root, finds an approximation for a root
-
-function [xr, valid, ea, iter] = bracketing(xl, xu, func, es, imax, isBisection)
+function [xr, valid, ea_all, iter] = bracketing(xl, xu, func, es, imax, isBisection)
 %Just some initiliazations
 %Iterations are 1-indexed
 iter = 0;
 valid = true;
 ea = 100.0;
+ea_all(1) = ea;
 test = test_product_positive(xl, xu, func);
 xr = 0; %NEED TO BE REVIEWED
 %Just verifying there is a change of sign at the initial guesses
@@ -39,7 +37,7 @@ while(ea >= es && iter < imax)
         if (xr ~= 0)
             ea = abs((xr - xr_previous) / xr) * 100;
         else
-            %Need to be reviewed
+            %Avoid division by zero
             ea = abs((xr_previous) / eps) * 100;
         end
     end
@@ -51,6 +49,7 @@ while(ea >= es && iter < imax)
     elseif(test == 0)
         ea = 0;
     end
+    ea_all(iter) = ea;
 end
 return;
 end

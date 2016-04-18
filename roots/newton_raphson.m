@@ -29,7 +29,7 @@
 %iter:        The iteration that the algorithm terminated at.
 
 
-function [root, ea, iter] = newton_raphson(x, f, delta, es, iter_c, verbose)
+function [root, ea_all, iter] = newton_raphson(x, f, delta, es, iter_c, verbose)
 %initialize
 iter = 0;
 ea = 100;
@@ -48,6 +48,7 @@ while(iter <= iter_c && ea > es)
         printf('Iteration# %d: root = %f and ea is %f \n', iter, root, ea);
     end
     root = new_root;
+    ea_all(iter) = ea;
 end
 return;
 end

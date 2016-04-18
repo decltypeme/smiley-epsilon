@@ -29,13 +29,13 @@
 %ea:          The approximate relative error at the end of the run.
 %iter:        The iteration that the algorithm terminated at.
 
-function [xk, ea, iter] = generic_secant(xi, xj, f, es, iter_c, modified_secant, delta, verbose)
+function [xk, ea_all, iter] = generic_secant(xi, xj, f, es, iter_c, modified_secant, delta, verbose)
 %initialize
 iter = 0;
 ea = 100;
 xk = xj;
 if(verbose)
-    printf('Starting the open method with x = %f \n', xj);
+    fprintf('Starting the open method with x = %f \n', xj);
 end
 if(feval(f, xj) == 0.0)
     return;
@@ -49,10 +49,11 @@ while(iter < iter_c && ea > es)     %Should we check if xk == 0.0?
     end
     ea = compute_ea(xk, xj);
     if(verbose)
-        printf('Iteration# %d: root = %f and ea is %f \n', iter, xk, ea);
+        fprintf('Iteration# %d: root = %f and ea is %f \n', iter, xk, ea);
     end
     xi = xj;
     xj = xk;
+    ea_all(iter) = ea;
 end
 return;
 end
