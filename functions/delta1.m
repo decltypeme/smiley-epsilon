@@ -8,7 +8,7 @@
 %
 % File: delta1.m
 % Author: Islam Faisal
-% Function #1 used in testing
+% Function Derivative #1 used in testing
 %
 function [ y ] = delta1( x )
 %y = x.^3 - 8 .* (x.^2) + 12 .* x - 4;

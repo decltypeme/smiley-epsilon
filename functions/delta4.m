@@ -6,12 +6,12 @@
 %
 
 %
-% File: f4.m
+% File: delta4.m
 % Author: Islam Faisal
-% Function #4 used in testing
+% Function Derivative #4 used in testing
 %
-function [ y ] = f4( x )
-y = log(x.^4) - 0.7;
+function [ y ] = delta4( x )
+y = 4.0 ./ x;
 return;
 end
 

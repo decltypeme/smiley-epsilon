@@ -6,12 +6,12 @@
 %
 
 %
-% File: f5.m
+% File: delta5.m
 % Author: Islam Faisal
-% Function #5 used in testing
+% Function Derivative #5 used in testing
 %
-function [ y ] = f5( x )
-y = 7 .* sin(x) - exp(x);
+function [ y ] = delta5( x )
+y = 7 .* cos(x) - exp(x);
 return;
 end
 

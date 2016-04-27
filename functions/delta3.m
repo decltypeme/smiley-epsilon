@@ -6,12 +6,12 @@
 %
 
 %
-% File: f3.m
+% File: delta3.m
 % Author: Islam Faisal
-% Function #3 used in testing
+% Function Derivative #3 used in testing
 %
-function [ y ] = f3( x )
-y = 6.*x - 4.*(x.^2) + 0.5 .*(x.^3) - 2;
+function [ y ] = delta3( x )
+y = 6 - 8 .* x + 1.5 .* (x.^2);
 return;
 end
 

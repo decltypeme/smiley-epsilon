@@ -6,12 +6,12 @@
 %
 
 %
-% File: f2.m
+% File: delta2.m
 % Author: Islam Faisal
-% Function #2 used in testing
+% Function Derivative#2 used in testing
 %
-function [ y ] = f2( x )
-y = -12 - 21 .* x + 18 .* (x.^2) -2.75 .* (x.^3);
+function [ y ] = delta2( x )
+y = (-21) + 36 .* x - 8.25 .* (x.^2);
 return;
 end
 
