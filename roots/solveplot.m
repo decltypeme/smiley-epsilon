@@ -36,20 +36,27 @@ x1 = n1:n2;
 y1 = sol.bisect.ea_all(n1:n2);
 %False position - Comment if unwanted 
 n2 = length(sol.false.ea_all);
-x1 = n1:n2;
-y1 = sol.false.ea_all(n1:n2);
+x2 = n1:n2;
+y2 = sol.false.ea_all(n1:n2);
 %Secant Method - Comment if unwanted
 n2 = length(sol.secant.ea_all);
-x1 = n1:n2;
-y1 = sol.secant.ea_all(n1:n2);
+x3 = n1:n2;
+y3 = sol.secant.ea_all(n1:n2);
 %Newton-Raphson Method - Comment if unwanted
 n2 = length(sol.newton.ea_all);
-x1 = n1:n2;
-y1 = sol.newton.ea_all(n1:n2);
+x4 = n1:n2;
+y4 = sol.newton.ea_all(n1:n2);
 %Now, plot
-plot(x1,y1,'-ro',x2,y2,'-bo', x3,y3, '-go', x4, y4, '-ko');
+plot(x1,y1,'-rx',x2,y2,'-bo', x3,y3, '-g*', x4, y4, '-ksquare');
 legend('Bisection','False Position', 'Secant', 'Newton-Raphson');
 title('Iterations Vs. Relative Approximate Error');
 xlabel('iteration');
 ylabel('relative approximate error');
 saveas(gcf, strcat(relative_to_call_path, file_name , '.eps'));
+%Print results to file
+fileID = fopen(strcat(relative_to_call_path, file_name , '.txt'), 'wt');
+fprintf(fileID,'Bisection\nroot:\t%f\terror:\t%f\n', sol.bisect.xr, sol.bisect.ea_all(length(sol.bisect.ea_all)));
+fprintf(fileID,'False Position\nroot:\t%f\terror:\t%f\n', sol.false.xr, sol.false.ea_all(length(sol.false.ea_all)));
+fprintf(fileID,'Secant\nroot:\t%f\terror:\t%f\n', sol.secant.xk, sol.secant.ea_all(length(sol.secant.ea_all)));
+fprintf(fileID,'Newton\nroot:\t%f\terror:\t%f\n', sol.newton.root, sol.newton.ea_all(length(sol.newton.ea_all)));
+fclose(fileID);
