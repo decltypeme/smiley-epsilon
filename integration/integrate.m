@@ -20,13 +20,11 @@ if(length(x) ~= length(f))
 end
 n = length(x);
 h = x(2) - x(1);
-k = 1;
+k = 0;
 sum = 0;
-for j = 2 : n+1
+for j = 1 : n
     if(j < n)           %Check if there are still more xs
         hf = x(j+1) - x(j);
-    else
-        hf = 0;        %just put any value
     end
     if(abs(h - hf) < tol)
         if(k==3)
