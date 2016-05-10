@@ -22,7 +22,7 @@ n = length(x);
 h = x(2) - x(1);
 k = 0;
 sum = 0;
-for j = 1 : n
+for j = 1 : n+1
     if(j < n)           %Check if there are still more xs
         hf = x(j+1) - x(j);
     end
