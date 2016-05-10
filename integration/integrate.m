@@ -12,6 +12,7 @@
 % rules
 %
 
+%%IMPORTANT
 
 function [ res ] = integrate( x, f, tol )
 if(length(x) ~= length(f))
