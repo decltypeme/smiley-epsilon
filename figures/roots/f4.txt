@@ -1,0 +1,8 @@
+Bisection
+root:	-1.191254	error:	0.007685
+False Position
+root:	-1.191255	error:	0.007929
+Secant
+root:	-1.191246	error:	0.000616
+Newton
+root:	-5.815959	error:	0.530269

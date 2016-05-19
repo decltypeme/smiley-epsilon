@@ -11,13 +11,13 @@
 % Solving a function with all of the methods
 %
 
-xl = -2;
-xu = 1;
-x_guess = 1;
+xl = 1;
+xu = 2;
+x_guess = exp(7/40);
 es = 0.01;
 iter_limit = 100;
-foo = @f1;
-file_name = 'f1';
+foo = @f5;
+file_name = 'f5';
 relative_to_call_path = 'figures\roots\';
 delta_foo = @delta1;
 %Solve using the bisection method
@@ -52,7 +52,8 @@ legend('Bisection','False Position', 'Secant', 'Newton-Raphson');
 title('Iterations Vs. Relative Approximate Error');
 xlabel('iteration');
 ylabel('relative approximate error');
-saveas(gcf, strcat(relative_to_call_path, file_name , '.eps'));
+%saveas(gcf, strcat(relative_to_call_path, file_name , '.eps'));
+saveas(gcf,strcat(relative_to_call_path, file_name),'epsc');
 %Print results to file
 fileID = fopen(strcat(relative_to_call_path, file_name , '.txt'), 'wt');
 fprintf(fileID,'Bisection\nroot:\t%f\terror:\t%f\n', sol.bisect.xr, sol.bisect.ea_all(length(sol.bisect.ea_all)));
