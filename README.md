@@ -12,9 +12,20 @@ A library of tools for numerical methods used in engineering applications.
 │   │   ├── f4.eps
 │   │   └── f5.eps
 │   ├── jacobi.eps
+│   ├── open-flowchart.eps
 │   └── roots
 │       ├── f1.eps
-│       └── f1.txt
+│       ├── f1.txt
+│       ├── f2.eps
+│       ├── f2.txt
+│       ├── f3.eps
+│       ├── f3.txt
+│       ├── f4.eps
+│       ├── f4.txt
+│       ├── f5.eps
+│       ├── f5.txt
+│       └── figures
+│           └── roots
 ├── functions
 │   ├── delta1.m
 │   ├── delta2.m
@@ -28,9 +39,15 @@ A library of tools for numerical methods used in engineering applications.
 │   └── f5.m
 ├── gauss_jordan.m
 ├── gauss_seidel_legacy.m
+├── gauss_test.m
 ├── integration
 │   ├── f_test.m
 │   ├── integrate.m
+│   ├── README.md
+│   ├── report
+│   │   ├── figures
+│   │   │   └── uneven.eps
+│   │   └── report.pdf
 │   ├── simpson13.m
 │   ├── simpson38.m
 │   ├── test.m
@@ -61,6 +78,9 @@ A library of tools for numerical methods used in engineering applications.
     │   └── bisect_test_script.m
     ├── newton_raphson.m
     ├── solutions
+    │   ├── f1.txt
+    │   └── figures
+    │       └── roots
     └── solveplot.m
 
 ```
@@ -82,6 +102,9 @@ This readme is to describe folder structures and the nitty-gritty details of wha
 ### Solving Systems of Linear equations
 1. Gauss-Jordan Elimination
 2. Jacobi Iteration of Gauss-Seidel
+
+### Functions and Derivatives
+We place functions and their derivatives in functions. A function for the ($i)ith test is called f$i.m and its derivative is called delta$i.m
 
 
 ## Part 2
